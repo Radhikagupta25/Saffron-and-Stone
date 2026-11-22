@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory font-sans text-charcoal antialiased;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C8922E;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-widest2 text-saffron;
+  }
+
+  .h-display {
+    @apply font-serif font-medium leading-[1.05] tracking-tight;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.16em] transition-colors duration-300;
+  }
+
+  .btn-saffron {
+    @apply bg-saffron text-forest-dark hover:bg-saffron-soft;
+  }
+
+  .btn-forest {
+    @apply bg-forest text-ivory hover:bg-forest-light;
+  }
+
+  .btn-outline-light {
+    @apply border border-ivory/60 text-ivory hover:bg-ivory hover:text-forest-dark;
+  }
+
+  .btn-outline-dark {
+    @apply border border-forest text-forest hover:bg-forest hover:text-ivory;
+  }
+}
